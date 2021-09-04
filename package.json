@@ -1,0 +1,41 @@
+{
+  "name": "outline_api",
+  "version": "0.1.0",
+  "description": "_IntroductionThe_Outline_API_is_structured_in_an_RPC_style__It_enables_you_toprogramatically_interact_with_all_aspects_of_Outlines_data__in_fact_themain_application_is_built_on_exactly_the_same_API_The_API_structure_is_available_as_an__openapi_specification_httpsgithub_comoutlineopenapi_if_thats_your_jam__it_can_be_used_to_generate_clients_for_most_programming_languages__Making_requestsOutlines_API_follows_simple_RPC_style_conventions_where_each_API_endpoint_isa_method_on_httpsapp_getoutline_comapimethod__Both_GET_and_POST_methods_are_supported_but_its_recommended_that_you_make_all_call_using_POST_Only_HTTPS_is_supported_and_all_response_payloads_are_JSON_When_making_POST_requests_request_parameters_are_parsed_depending_onContent_Type_header__To_make_a_call_using_JSON_payload_you_must_passContent_Type_applicationjson_header_heres_an_example_using_CURLcurl_httpsapp_getoutline_comapidocuments_info_X_POST_H_authorization_Bearer_MY_API_KEY_H_content_type_applicationjson_H_accept_applicationjson_d_id_outline_api_NTpezNwhUPOr_with_JavaScriptjavascriptconst_response__await_fetch_httpsapp_getoutline_comapidocuments_info___method_POST__headers_____Accept_applicationjson____Content_Type_applicationjson____Authorization_Bearer_MY_API_KEY__const_body__await_response_json_const_document__body_data_AuthenticationTo_access_API_endpoints_you_must_provide_a_valid_API_key__You_can_create_newAPI_keys_in_your__account_settings_httpsapp_getoutline_comsettings__Becareful_when_handling_your_keys_as_they_give_access_to_all_of_your_documentsyou_should_treat_them_like_passwords_and_they_should_never_be_committed_tosource_control_To_authenticate_with_API_you_can_supply_the_API_key_as_a_header_Authorization_Bearer_YOUR_API_KEY_or_as_part_of_the_payload_using_token_parameter__Header_based_authentication_is_highly_recommended_so_that_your_keysdont_accidentally_leak_into_logs_Some_API_endpoints_allow_unauthenticated_requests_for_public_resources_andthey_can_be_called_without_an_API_key__ErrorsAll_successful_API_requests_will_be_returned_with_a_200_or_201_status_codeand_ok_true_in_the_response_payload__If_theres_an_error_while_making_therequest_the_appropriate_status_code_is_returned_with_the_error_message__ok_false__error_Not_Found_PaginationMost_top_level_API_resources_have_support_for_list_API_methods__For_instanceyou_can_list_users_documents_and_collections__These_list_methods_sharecommon_parameters_taking_both_limit_and_offset_Responses_will_echo_these_parameters_in_the_root_pagination_key_and_alsoinclude_a_nextPath_key_which_can_be_used_as_a_handy_shortcut_to_fetch_thenext_page_of_results__For_example__ok_true__status_200__data____pagination_____limit_25____offset_0____nextPath_apidocuments_listlimit25offset25___PoliciesMany_API_resources_have_associated_policies_these_objects_describe_thecurrent_API_keys_authorized_actions_related_to_an_individual_resource__Itshould_be_noted_that_the_policy_id_is_identical_to_the_resource_it_isrelated_to_policies_themselves_do_not_have_unique_identifiers_For_most_usecases_of_the_API_policies_can_be_safely_ignored__Callingunauthorized_methods_will_result_in_the_appropriate_response_code__these_areused_in_the_main_Outline_UI_to_adjust_which_elements_are_visible_",
+  "license": "Unlicense",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha --require @babel/register --recursive"
+  },
+  "browser": {
+    "fs": false
+  },
+  "dependencies": {
+    "@babel/cli": "^7.0.0",
+    "superagent": "^5.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-proposal-do-expressions": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-function-bind": "^7.0.0",
+    "@babel/plugin-proposal-function-sent": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "expect.js": "^0.3.1",
+    "mocha": "^8.0.1",
+    "sinon": "^7.2.0"
+  }
+}
